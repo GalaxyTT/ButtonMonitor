@@ -11,6 +11,7 @@ public:
     ~gpio(); // destructor for clean-up
     void set(int pin, bool value);
     void set(unsigned int pattern);
+    bool get(int pin, bool flank);
     bool get(int pin);
 
 signals:
@@ -19,6 +20,7 @@ public slots:
 
 private:
     int m_handle;
+    QList<bool> m_oldStates;
 };
 
 #endif // GPIO_H

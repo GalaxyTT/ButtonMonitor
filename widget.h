@@ -16,11 +16,14 @@ public:
 
 public slots:
     void updateButtonState();
+    void updateCount();
 
 private:
     QList<QLabel*> m_input_display;
     QTimer* m_timer;
     gpio* m_gpio;
+    QLabel* m_countLabel = nullptr;
+    unsigned int m_count = 0;
 
 };
 
